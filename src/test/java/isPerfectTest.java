@@ -8,19 +8,19 @@ public class isPerfectTest {
     public void isNotPerfectTest() {
         // Arrange
         int number = 500;
-        FindPerfectNr input = new FindPerfectNr();
+        FindPerfectNr input = new FindPerfectNr(number);
 
         // Act & Assert
-        assertFalse(input.isPerfect(number));
+        assertFalse(input.isPerfect());
     }
 
     @Test
     public void isPerfectTest() {
         // Arrange
         int number = 6;
-        FindPerfectNr input = new FindPerfectNr();
+        FindPerfectNr input = new FindPerfectNr(number);
 
         // Act & Assert
-        assertTrue(input.isPerfect(number));
+        assertTrue(input.isPerfect());
     }
 }

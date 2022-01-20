@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+    <display-name>Perfect Numbers service</display-name>
+    <description>
+        Simple web app to verify whether the number is perfect or not.
+    </description>
+
+    <servlet>
+        <servlet-name>PerfectNrServlet</servlet-name>
+        <servlet-class>PerfectNrServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PerfectNrServlet</servlet-name>
+        <url-pattern>/number/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>

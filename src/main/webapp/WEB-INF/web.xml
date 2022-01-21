@@ -15,4 +15,14 @@
         <url-pattern>/number/*</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>PerfectsInRange</servlet-name>
+        <servlet-class>PerfectsInRange</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PerfectsInRange</servlet-name>
+        <url-pattern>/range/*</url-pattern>
+    </servlet-mapping>
+
 </web-app>

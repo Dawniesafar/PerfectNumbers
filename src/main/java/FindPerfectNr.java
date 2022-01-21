@@ -1,27 +1,19 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-
+/**
+ * Class manage finding perfect numbers.
+ */
 public class FindPerfectNr {
-
-    protected float input;
-
-    public FindPerfectNr(float input) {
-        this.input = input;
-    }
-
-    protected void setNumber(float inputNr) {
-        input = inputNr;
-    }
-
-    protected float getNumber() {
-        return input;
-    }
 
     /**
      * Verifies if the input number is perfect.
+     * @param input the number to be verified.
      * @return True if the number is perfect.
      */
-    protected boolean isPerfect () {
-        float mySum = 0;
+    protected boolean isPerfect (int input) {
+        int mySum = 0;
         // return the sum of inputNr factors.
         for(int i = 1; i <= input/2; i++) {
             if (input % i == 0) {
@@ -31,13 +23,21 @@ public class FindPerfectNr {
         return input == mySum ? Boolean.TRUE : Boolean.FALSE;
     }
 
-    public static void main(String args[]) {
-       /* FindPerfectNr findPerfectNr01 = new FindPerfectNr();
-        boolean perfectNr = findPerfectNr01.isPerfect(496);
+    /**
+     * Lists perfect numbers in range of two integers
+     * @param inputRang the input array.
+     * @return list of perfect numbers.
+     */
+    protected List<Integer> perfectNumbers(int[] inputRang) {
+        List<Integer> result = new ArrayList<>();
+        int min = Arrays.stream(inputRang).min().getAsInt();
+        int max = Arrays.stream(inputRang).max().getAsInt();
 
-        if (perfectNr)
-        System.out.println("the number is perfect.");
-        else
-            System.out.println("the number is not perfect");*/
+        for (int i = min; i <= max; i++) {
+            if(isPerfect(i)) {
+                result.add(i);
+            }
+        }
+        return result;
     }
 }

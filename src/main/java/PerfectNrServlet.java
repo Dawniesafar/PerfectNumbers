@@ -10,9 +10,8 @@ public class PerfectNrServlet extends HttpServlet {
         String reqUrl = req.getRequestURI();
         String number = reqUrl.substring("/PerfectNumbers/number/".length());
 
-        FindPerfectNr isNrPerfect = new FindPerfectNr(Float.parseFloat(number));
-        //isNrPerfect.setNumber(Float.parseFloat(number));
-        boolean result = isNrPerfect.isPerfect();
+        FindPerfectNr isNrPerfect = new FindPerfectNr();
+        boolean result = isNrPerfect.isPerfect(Integer.parseInt(number));
         String json = "{\n";
         json += "\"number\": " + number + "\n";
         json += "\"perfect\": ";
